@@ -36,10 +36,12 @@ export class HomePage extends BasePage {
   static get monthSelect() {
     return cy.get("[class='react-datepicker__month-select']");
   }
+ 
   
-  static get daySelect() {
-    return cy.get("[aria-label='Choose Friday, February 28th, 1930']");
+  static selectDay(day) {
+    return cy.get(`.react-datepicker__day--0${day}`).not('.react-datepicker__day--outside-month');
   }
+
   
   static get subjects() {
     return cy.get("#subjectsContainer");

@@ -15,9 +15,13 @@ describe('template spec', () => {
     HomePage.phoneNumber.type("1234567891");
     // c. Set the - Date of Birth - with Calendar widget to - 28th of February, 1930.
     HomePage.DOB.click();
-    HomePage.yearSelect.select("1930");
-    HomePage.monthSelect.select("1");
-    HomePage.daySelect.click();
+    var year = "1930";
+    HomePage.yearSelect.select(year);
+    var month = 1; //(0-11) january = 0
+    HomePage.monthSelect.select(month);
+    var day = 28;
+    HomePage.selectDay(day).click();
+
     // d. Set Subjects to Economics.
     HomePage.subjects.type("eco{enter}");
     // e. Set Hobbies to Music.
